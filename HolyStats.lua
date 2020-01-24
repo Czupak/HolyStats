@@ -93,7 +93,7 @@ function HolyStats_update()
 			then
 				for k,v in pairs(stats)
 				do
-					if k == "ITEM_MOD_SPELL_POWER_SHORT"
+					if k == "ITEM_MOD_SPELL_POWER_SHORT" or k == "ITEM_MOD_SPELL_HEALING_DONE_SHORT"
 					then
 						itemBonus = itemBonus + v + 1
 					elseif k == "ITEM_MOD_POWER_REGEN0_SHORT"
