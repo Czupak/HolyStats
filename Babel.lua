@@ -65,7 +65,7 @@ local strings = {
         ['Rank 9'] = 'Rank 9',
         ['Rank 10'] = 'Rank 10',
     },
-    	['frFR'] = {
+    ['frFR'] = {
         -- Talents
         ['Spiritual Healing'] = 'Soins spirituels',
         ['Improved Healing'] = 'Soin amélioré',
@@ -97,19 +97,42 @@ local strings = {
         ['Rank 8'] = 'Rang 8',
         ['Rank 9'] = 'Rang 9',
         ['Rank 10'] = 'Rang 10',
-    }
+    },
+    ['ruRU'] = {
+        -- Talents
+        ['Spiritual Healing'] = 'Духовное исцеление',
+        ['Improved Healing'] = 'Улучшенное исцеление',
+        ['Improved Renew'] = 'Улучшенное обновление',
+        ['Mental Agility'] = 'Подвижность мысли',
+        ['Holy Specialization'] = 'Cпециализация на магии Света',
+        ['Meditation'] = 'Медитация',
+        ['Improved Prayer of Healing'] = 'Улучшенная молитва исцеления',
+        -- Skills
+        ['Heal'] = 'Исцеление',
+        ['Greater Heal'] = 'Большее исцеление',
+        ['Prayer of Healing'] = 'Молитва исцеления',
+        ['Renew'] = 'Обновление',
+        ['Flash Heal'] = 'Быстрое исцеление',
+        ['Lesser Heal'] = 'Малое исцеление',
+        ['Rank 1'] = '(Уровень 1)',
+        ['Rank 2'] = '(Уровень 2)',
+        ['Rank 3'] = '(Уровень 3)',
+        ['Rank 4'] = '(Уровень 4)',
+        ['Rank 5'] = '(Уровень 5)',
+        ['Rank 6'] = '(Уровень 6)',
+        ['Rank 7'] = '(Уровень 7)',
+        ['Rank 8'] = '(Уровень 8)',
+        ['Rank 9'] = '(Уровень 9)',
+        ['Rank 10'] = '(Уровень 10)',
+    },
 }
 
 function b(s)
     local lang = 'enUS'
-    if GetLocale() == 'deDE'
+    if strings[GetLocale()] ~= nil
     then
         lang = GetLocale()
     end
-    if GetLocale() == 'frFR'
-    then
-        lang = GetLocale()
-    end	
     if lang == 'enUS'
     then
         return s
@@ -128,19 +151,14 @@ end
 
 function en(s)
     local lang = 'enUS'
-    if GetLocale() == 'deDE'
+    if strings[GetLocale()] ~= nil
     then
         lang = GetLocale()
     end
-    if GetLocale() == 'frFR'
-    then
-        lang = GetLocale()
-    end	    
     if lang == 'enUS'
     then
         return s
     end
-
     for org, tr in pairs(strings[lang])
     do
         if tr == s
